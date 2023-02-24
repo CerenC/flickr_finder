@@ -1,16 +1,20 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
     namespace 'com.cerenb.flickrfinder'
-    compileSdk 33
+    compileSdk build_versions.compile_sdk
 
     defaultConfig {
         applicationId "com.cerenb.flickrfinder"
-        minSdk 24
-        targetSdk 33
+        minSdk build_versions.min_sdk
+        targetSdk build_versions.target_sdk
         versionCode 1
         versionName "1.0"
 
@@ -34,10 +38,49 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation deps.recyclerview
+    implementation deps.core_ktx
+    implementation deps.app_compat
+    implementation deps.material
+    implementation deps.constraint_layout
+    implementation deps.fragment.fragment_ktx
+    implementation deps.swiperefreshlayout
+
+    //Test
+    testImplementation deps.junit
+    testImplementation deps.mockito.core
+    testImplementation deps.mockito.mockito_kotlin
+    testImplementation deps.coroutines.test
+    debugImplementation deps.fragment.testing
+    androidTestImplementation deps.navigation.testing
+    testImplementation deps.atsl.ext_junit
+    testImplementation deps.arch_testing
+    testImplementation deps.junitparam
+    androidTestImplementation deps.junitparam
+
+    //Navigation
+    implementation deps.navigation.ui_ktx
+    implementation deps.navigation.fragment_ktx
+
+    //Network
+    implementation deps.network.retrofit
+    implementation deps.network.moshi_converter
+    implementation deps.network.okhttp
+    implementation deps.network.okhttp_logging_intercepter
+    implementation deps.network.moshi_kotlin
+    kapt deps.network.moshi_kotlin_codegen
+
+    //DI
+    implementation deps.hilt.hilt_android
+    kapt deps.hilt.compiler
+
+    //Lifecycle
+    implementation deps.lifecycle.runtime_ktx
+
+    //Paging
+    implementation deps.paging
+
+    //Glide
+    implementation deps.glide.runtime
+    kapt deps.glide.compiler
 }
