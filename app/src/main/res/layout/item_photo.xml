@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/list_item_padding">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/thumbnail_image"
+        android:layout_width="@dimen/photo_width"
+        android:layout_height="@dimen/photo_height"
+        android:contentDescription="@string/searched_photo"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title"
+        style="@style/TextStyle.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/thumbnail_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="I am title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">FlickrFinder</string>
+    <string name="photo_search">Photo Search</string>
+    <string name="full_photo">Full Photo</string>
+    <string name="searched_photo">Searched Photo</string>
+    <string name="search_hint">Search Photo</string>
+    <string name="retry">Retry</string>
+    <string name="type_search_query">Please type a photo name to see photos</string>
+
+    <!--Errors-->
+    <string name="unknown_network_error">An unexpected error has occurred. Please check your network connection and try again.</string>
+    <string name="connect_error">Could not connect to the server. Please check your internet connection and try again.</string>
+    <string name="unknown_host_error">Could not connect to the server at the moment. Please try again in a few minutes.</string>
+
 </resources>

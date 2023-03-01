@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/photo_search_fragment">
+
+    <fragment
+        android:id="@+id/photo_search_fragment"
+        android:name="com.cerenb.flickrfinder.ui.view.PhotoSearchFragment"
+        android:label="@string/photo_search"
+        tools:layout="@layout/fragment_photo_search">
+        <action
+            android:id="@+id/action_photo_search_to_full_photo_fragment"
+            app:destination="@+id/full_photo_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/full_photo_fragment"
+        android:name="com.cerenb.flickrfinder.ui.view.FullPhotoFragment"
+        android:label="@string/full_photo"
+        tools:layout="@layout/fragment_photo_search">
+        <argument
+            android:name="full_photo_image_url"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
