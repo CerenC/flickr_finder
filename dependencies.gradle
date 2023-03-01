@@ -1,10 +1,10 @@
 ext.deps = [:]
 def versions = [:]
-versions.navigation = "2.4.2"
+versions.navigation = "2.5.3"
 versions.retrofit = "2.9.0"
 versions.okhttp = "4.9.3"
-versions.moshi_kotlin = "1.13.0"
-versions.hilt = "2.41"
+versions.moshi_kotlin = "1.14.0"
+versions.hilt = "2.45"
 versions.constraint_layout = "2.0.4"
 versions.material = "1.3.0"
 versions.recyclerview = "1.2.1"
@@ -18,7 +18,7 @@ versions.kotlin = "1.8.10"
 versions.coroutines = "1.6.2"
 versions.mockito = "4.6.1"
 versions.mockito_kotlin = "4.0.0"
-versions.lifecycle = "2.4.1"
+versions.lifecycle = "2.5.1"
 versions.swiperefreshlayout = "1.1.0"
 versions.arch_testing = "2.1.0"
 versions.junit_param = "1.1.1"
@@ -27,9 +27,9 @@ versions.glide = "4.13.0"
 ext.versions = versions
 
 def build_versions = [:]
-build_versions.min_sdk = 21
-build_versions.compile_sdk = 32
-build_versions.target_sdk = 32
+build_versions.min_sdk = 24
+build_versions.compile_sdk = 33
+build_versions.target_sdk = 33
 ext.build_versions = build_versions
 
 def deps = [:]
