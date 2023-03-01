@@ -1,6 +1,6 @@
 package com.cerenb.flickrfinder.data.datasources.remote.model
 
-import com.cerenb.flickrfinder.domain.domain.Photo
+import com.cerenb.flickrfinder.domain.model.Photo
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -32,4 +32,3 @@ fun PhotoResponse.toDomainModel() = Photo(
     secret = secret,
     server = server
 )
-

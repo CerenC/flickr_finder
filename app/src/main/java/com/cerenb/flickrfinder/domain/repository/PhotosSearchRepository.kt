@@ -1,7 +1,9 @@
 package com.cerenb.flickrfinder.domain.repository
 
-import com.cerenb.flickrfinder.domain.domain.Photo
+import androidx.paging.PagingData
+import com.cerenb.flickrfinder.domain.model.Photo
+import kotlinx.coroutines.flow.Flow
 
 interface PhotosSearchRepository {
-    fun getPhotos(query : String) : Photo
+    fun getPhotos(query: String): Flow<PagingData<Photo>>
 }
