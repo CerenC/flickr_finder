@@ -3,6 +3,7 @@ package com.cerenb.flickrfinder.test
 import com.cerenb.flickrfinder.data.datasources.remote.model.PhotoResponse
 import com.cerenb.flickrfinder.data.datasources.remote.model.PhotoSearchResponse
 import com.cerenb.flickrfinder.data.datasources.remote.model.PhotosResponse
+import com.cerenb.flickrfinder.data.datasources.remote.model.toDomainModel
 
 object FakeData {
 
@@ -30,7 +31,8 @@ object FakeData {
     val photoSearchResponse = PhotoSearchResponse(
         stat = "OK",
         photos = photosResponse
-
     )
+
+    val photos = photoSearchResponse.photos.photoResult.map { it.toDomainModel() }
 
 }
