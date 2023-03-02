@@ -59,11 +59,9 @@ dependencies {
     testImplementation deps.mockito.mockito_kotlin
     testImplementation deps.coroutines.test
     debugImplementation deps.fragment.testing
-    androidTestImplementation deps.navigation.testing
     testImplementation deps.atsl.ext_junit
     testImplementation deps.arch_testing
     testImplementation deps.junitparam
-    androidTestImplementation deps.junitparam
 
     //Navigation
     implementation deps.navigation.ui_ktx
