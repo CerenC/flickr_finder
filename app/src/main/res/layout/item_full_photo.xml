@@ -9,6 +9,6 @@
         android:layout_height="match_parent"
         android:contentDescription="@string/searched_photo"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_placeholder"/>
+        android:src="@drawable/ic_placeholder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

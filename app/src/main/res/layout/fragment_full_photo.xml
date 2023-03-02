@@ -8,11 +8,11 @@
         android:id="@+id/full_photo_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
         android:contentDescription="@string/full_photo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_placeholder"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/ic_placeholder"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
