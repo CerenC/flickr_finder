@@ -14,6 +14,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
@@ -22,6 +23,8 @@ class PhotoSearchViewModel @Inject constructor(
     private val getPhotosUseCase: GetPhotosUseCase,
     @IoDispatcher private val dispatcher: CoroutineDispatcher
 ) : ViewModel() {
+
+    private var searchJob: Job? = null
 
     private val _state = MutableStateFlow<UiState<PagingData<PhotoListItem>>>(UiState.Idle)
     val state: StateFlow<UiState<PagingData<PhotoListItem>>> = _state
@@ -42,7 +45,9 @@ class PhotoSearchViewModel @Inject constructor(
 
     @OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
     private fun getPhotos() {
-        queryFlow.debounce(DEBOUNCE_MILLIS)
+        searchJob?.cancel()
+
+        searchJob = queryFlow.debounce(DEBOUNCE_MILLIS)
             .filter { searchQuery ->
                 if (searchQuery.isEmpty()) {
                     _state.value = UiState.Idle
