@@ -13,4 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "FlickrFinder"
-include ':app'
+include(":app")
+
+
+
